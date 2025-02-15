@@ -1,0 +1,60 @@
+//        final var addProfessorToCourse = courseService.addProfessorToCourse(2L,12L);
+//        System.out.println("add: " + addProfessorToCourse);
+
+//        final var addStudentToCourse = courseService.addStudentToCourse(2L,1L);
+//        System.out.println("saved: "+addStudentToCourse);
+
+//        final var classroom = classroomService.findById(1L);
+//
+//        final var course = CourseEntity.builder()
+//                .name("Maquinaria 1")
+//                .time(true)
+//                .classroom(classroom)
+//                .build();
+//        final var courseCreated = courseService.create(course);
+//
+//        System.out.println(courseCreated);
+
+//        final var classroom = ClassroomEntity.builder()
+//                .room(103)
+//                .time(true)
+//                .build();
+//
+//        final var classroomCreated = classroomService.create(classroom);
+//        System.out.println(classroomCreated);
+
+//        final var student = StudentEntity.builder()
+//                .scholarship(true)
+//                .build();
+//        final var studentCreated = studentService.create(student,5L);
+//
+//        System.out.println(studentCreated);
+
+//        final var professor = ProfessorEntity.builder()
+//                .salary(BigInteger.ZERO)
+//                .build();
+//        final var professorCreated = professorService.create(professor,12L);
+//
+//
+//        System.out.println(professorCreated);
+
+
+//        System.out.println("uri:" + URI.create(("/").concat(professorCreated.getId().toString())));
+//
+//		final var student = StudentEntity.builder()
+//				.person(person)
+//				.scholarship(true)
+//				.build();
+//
+//		final var studentCreated = studentService.create(student);
+        // System.out.println("uri:" + URI.create(("/").concat(studentCreated.getId().toString())));
+
+//
+//		final var students = studentService.findAll();
+//		System.out.println(students);
+
+//		final var professor = professorService.findById(11L);
+//		System.out.println(professor);
+//
+//		final var person = personService.findByProfessorId(11L);
+//		System.out.println(person);
