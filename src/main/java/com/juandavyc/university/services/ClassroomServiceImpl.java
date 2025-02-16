@@ -1,9 +1,14 @@
 package com.juandavyc.university.services;
 
+import com.juandavyc.university.dtos.classroom.request.ClassroomRequestDTO;
+import com.juandavyc.university.dtos.classroom.request.ClassroomWithCoursesRequestDTO;
 import com.juandavyc.university.dtos.classroom.response.ClassroomResponseDTO;
 import com.juandavyc.university.dtos.classroom.response.ClassroomWithCoursesResponseDTO;
+import com.juandavyc.university.dtos.course.request.CourseRequestDTO;
 import com.juandavyc.university.entities.ClassroomEntity;
+import com.juandavyc.university.entities.CourseEntity;
 import com.juandavyc.university.mappers.ClassroomMapper;
+import com.juandavyc.university.mappers.CourseMapper;
 import com.juandavyc.university.repositories.ClassroomRepository;
 import com.juandavyc.university.specifications.ClassroomSpecifications;
 import jakarta.annotation.Nonnull;
@@ -27,6 +32,8 @@ public class ClassroomServiceImpl implements ClassroomService {
 
     private final ClassroomRepository classroomRepository;
     private final ClassroomMapper classroomMapper;
+    // por testear
+    private final CourseMapper courseMapper;
 
     @Override
     public ClassroomEntity findByIdEntity(Long id) {
@@ -34,6 +41,22 @@ public class ClassroomServiceImpl implements ClassroomService {
                 .orElseThrow(() -> new IllegalArgumentException("No classroom found by id: " + id));
     }
 
+    @Transactional(
+            propagation = Propagation.NESTED,
+            readOnly = true
+    )
+    @Override
+    public ClassroomWithCoursesResponseDTO findByIdWithCourses(Long id) {
+
+        final var classroom = findByIdEntity(id);
+        return classroomMapper.toClassroomWithCoursesResponseDTO(classroom);
+
+    }
+
+    @Transactional(
+            propagation = Propagation.NOT_SUPPORTED,
+            readOnly = true
+    )
     @Override
     public Page<ClassroomResponseDTO> findByFilters(Long id, Integer room, Pageable pageable) {
 
@@ -41,10 +64,8 @@ public class ClassroomServiceImpl implements ClassroomService {
                 .where(ClassroomSpecifications.hasRoom(room))
                 .and(ClassroomSpecifications.hasId(id));
 
-        final var classroom = classroomRepository.findAll(spec,pageable);
-
+        final var classroom = classroomRepository.findAll(spec, pageable);
         return classroom.map(classroomMapper::toClassroomResponseDTO);
-
     }
 
     @Transactional(
@@ -53,7 +74,9 @@ public class ClassroomServiceImpl implements ClassroomService {
     )
     @Override
     public ClassroomResponseDTO findById(Long id) {
+
         return classroomMapper.toClassroomResponseDTO(findByIdEntity(id));
+
     }
 
     @Transactional(
@@ -77,37 +100,73 @@ public class ClassroomServiceImpl implements ClassroomService {
             readOnly = true
     )
     @Override
-    public List<ClassroomWithCoursesResponseDTO> findAllWithCourses() {
+    public Page<ClassroomWithCoursesResponseDTO> findAllWithCourses(Pageable pageable) {
 
-        final var classrooms = classroomRepository.findAll();
+        final var classrooms = classroomRepository.findAll(pageable);
         if (classrooms.isEmpty()) {
             throw new IllegalStateException("No classrooms found");
         } else {
-            return mapClassrooms(classrooms, classroomMapper::toClassroomWithCoursesResponseDTO);
+            return classrooms.map(classroomMapper::toClassroomWithCoursesResponseDTO);
         }
     }
 
-    @Transactional(
-            propagation = Propagation.NESTED,
-            readOnly = true
-    )
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
-    public ClassroomWithCoursesResponseDTO findByIdWithCourses(Long id) {
-        final var classroom = findByIdEntity(id);
-        return classroomMapper.toClassroomWithCoursesResponseDTO(classroom);
+    public String create(ClassroomRequestDTO classroomRequestDTO) {
+        try {
+            final var toCreate = classroomMapper.toClassroomEntity(classroomRequestDTO);
+            return classroomRepository.save(toCreate).getId().toString();
+        } catch (Exception e) {
+            throw new IllegalStateException("Class room with number: " + classroomRequestDTO.getRoom() + " already exists");
+        }
     }
 
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
-    public ClassroomEntity create(ClassroomEntity classroom) {
-        return classroomRepository.save(classroom);
+    public String create(ClassroomWithCoursesRequestDTO classroomWithCoursesRequestDTO) {
+        try{
+            final var toCreate = classroomMapper.toClassroomWithCoursesEntity(classroomWithCoursesRequestDTO);
+
+            // sincronizar doble
+            toCreate.getCourses().forEach(course -> course.setClassroom(toCreate));
+
+            return classroomRepository.save(toCreate).getId().toString();
+        }catch (Exception e){
+            throw new IllegalStateException("Class room with number: " + classroomWithCoursesRequestDTO.getRoom() + " already exists");
+        }
+
     }
 
-    private <T> List<T> mapClassrooms(
-            List<ClassroomEntity> classrooms,
-            Function<ClassroomEntity, T> mapperTFunction
-    ) {
-        return classrooms.stream()
-                .map(mapperTFunction)
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public String create(Long id, List<CourseRequestDTO> coursesRequestDTO) {
+
+        if(coursesRequestDTO.isEmpty()){
+            throw new IllegalArgumentException("Course list cannot be empty.");
+        }
+
+        final var classroomEntity = findByIdEntity(id);
+        // single
+        // final var courseEntity = courseMapper.toCourseEntity(courseRequestDTO);
+        final var coursesEntities = coursesRequestDTO.stream()
+                .map(courseRequestDTO-> courseMapper.toCourseEntity(courseRequestDTO))
+                .peek(courseEntity -> courseEntity.setClassroom(classroomEntity))
                 .toList();
+
+        classroomEntity.getCourses().addAll(coursesEntities);
+
+        return classroomRepository.save(classroomEntity).getId().toString();
+
     }
+
+
+//    private <T> List<T> mapClassrooms(
+//            List<ClassroomEntity> classrooms,
+//            Function<ClassroomEntity, T> mapperTFunction
+//    ) {
+//        return classrooms.stream()
+//                .map(mapperTFunction)
+//                .toList();
+//    }
+
 }

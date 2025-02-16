@@ -1,6 +1,7 @@
 package com.juandavyc.university.mappers;
 
 import com.juandavyc.university.dtos.course.CourseResponseDTO;
+import com.juandavyc.university.dtos.course.request.CourseRequestDTO;
 import com.juandavyc.university.entities.CourseEntity;
 import jdk.jfr.Name;
 import org.mapstruct.Mapper;
@@ -15,6 +16,8 @@ public interface CourseMapper {
 
     @Mapping(source = "time", target = "timePeriod", qualifiedByName = "mapTimePeriod")
     CourseResponseDTO toCourseResponseDTO(CourseEntity courseEntity);
+
+    CourseEntity toCourseEntity(CourseRequestDTO courseRequestDTO);
 
     @Named("mapTimePeriod")
     default String time(boolean time) {

@@ -20,6 +20,8 @@ public interface ClassroomRepository
     @Override
     Page<ClassroomEntity> findAll(Specification<ClassroomEntity> spec,@NonNull Pageable pageable);
 
+
+
     // replaced by Specification
     // @Query("SELECT c FROM ClassroomEntity c WHERE (:id IS NULL OR c.id=:id) AND (:room IS NULL OR c.room=:room)")
     // Page<ClassroomEntity> findByFilters(@Param("id") Long id, @Param("room") Integer room, Pageable pageable);
