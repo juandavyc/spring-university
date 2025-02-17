@@ -13,4 +13,5 @@ public interface CourseService {
 
     CourseEntity addProfessorToCourse(Long courseId,Long professorId);
 
+    CourseEntity findByName(String name);
 }

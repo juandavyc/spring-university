@@ -4,17 +4,17 @@ import com.juandavyc.university.dtos.classroom.request.ClassroomRequestDTO;
 import com.juandavyc.university.dtos.classroom.request.ClassroomWithCoursesRequestDTO;
 import com.juandavyc.university.dtos.classroom.response.ClassroomResponseDTO;
 import com.juandavyc.university.dtos.classroom.response.ClassroomWithCoursesResponseDTO;
-import com.juandavyc.university.dtos.course.request.CourseRequestDTO;
-import com.juandavyc.university.entities.ClassroomEntity;
+import com.juandavyc.university.dtos.course.request.CourseRequestFullDTO;
+import com.juandavyc.university.dtos.course.request.CourseRequestNameTimeDTO;
 import com.juandavyc.university.services.ClassroomService;
 
+import com.juandavyc.university.services.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
 import jakarta.validation.Valid;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +29,7 @@ import java.util.List;
 public class ClassroomController {
 
     private final ClassroomService classroomService;
+    private final CourseService courseService;
 
     @GetMapping
     public ResponseEntity<Page<ClassroomResponseDTO>> findAll(
@@ -90,7 +91,7 @@ public class ClassroomController {
     @PostMapping(path = "{id}/courses")
     public ResponseEntity<String> createWithCourses(
             @PathVariable Long id,
-            @Valid @RequestBody List<CourseRequestDTO> courseRequestDTO
+            @Valid @RequestBody List<CourseRequestNameTimeDTO> courseRequestDTO
     ) {
 
         return ResponseEntity.created(
@@ -101,5 +102,25 @@ public class ClassroomController {
 
     }
 
+    @PutMapping(path = "{id}")
+    public ResponseEntity<ClassroomResponseDTO> update(
+            @PathVariable Long id,
+            @Valid @RequestBody ClassroomRequestDTO classroomDTO
+    ){
+        return ResponseEntity.ok(classroomService.update(id, classroomDTO));
+    }
+
+    @PutMapping(path = "{id}/courses")
+    public ResponseEntity<ClassroomWithCoursesResponseDTO> updateCourses(
+            @PathVariable Long id,
+            @Valid @RequestBody List<@Valid CourseRequestFullDTO> courseRequestDTOS
+    ){
+        return ResponseEntity.ok(classroomService.updateCourses(id, courseRequestDTOS));
+    }
+    @DeleteMapping(path = "{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        classroomService.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 
 }

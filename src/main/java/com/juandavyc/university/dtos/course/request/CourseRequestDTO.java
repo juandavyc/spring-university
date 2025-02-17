@@ -1,12 +1,11 @@
 package com.juandavyc.university.dtos.course.request;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import jakarta.validation.constraints.NotNull;
-
 
 
 @Data
@@ -17,11 +16,8 @@ import jakarta.validation.constraints.NotNull;
 public class CourseRequestDTO {
 
 
-    @NotBlank(message = "Name course cannot be blank")
-    private String name;
-
-    @NotNull(message = "Time course cannot be null")
-    private Boolean time;
+    @NotBlank(message = "Id course cannot be blank")
+    protected Long id;
 
 
 }

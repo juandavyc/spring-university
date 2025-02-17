@@ -29,7 +29,7 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public CourseEntity findById(Long id) {
         return courseRepository.findById(id)
-                .orElseThrow(()->new IllegalArgumentException("Person by id " + id + " not found"));
+                .orElseThrow(()->new IllegalArgumentException("Course by id " + id + " not found"));
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
@@ -54,6 +54,11 @@ public class CourseServiceImpl implements CourseService {
         professor.getCourses().add(course);
 
         return courseRepository.save(course);
+    }
+
+    @Override
+    public CourseEntity findByName(String name) {
+        return courseRepository.findByName(name);
     }
 
 //    @Override

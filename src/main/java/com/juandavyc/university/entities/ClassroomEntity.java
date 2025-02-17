@@ -29,8 +29,8 @@ public class ClassroomEntity {
     @OneToMany(
             mappedBy = "classroom",
             fetch = FetchType.LAZY,
-            orphanRemoval = true,
-            cascade = CascadeType.ALL
+            //orphanRemoval = true,
+            cascade = CascadeType.PERSIST
     )
     @ToString.Exclude
     // temporal

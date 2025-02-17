@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class ClassroomWithCoursesResponseDTO {
+public class ClassroomWithCoursesResponseDTO  {
 
     private Integer id;
     private Integer room;

@@ -1,6 +1,7 @@
 package com.juandavyc.university.dtos.classroom.request;
 
 import com.juandavyc.university.dtos.course.request.CourseRequestDTO;
+import com.juandavyc.university.dtos.course.request.CourseRequestNameTimeDTO;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import lombok.*;
@@ -20,6 +21,6 @@ public class ClassroomWithCoursesRequestDTO extends ClassroomRequestDTO{
     @NotEmpty(message = "Course list cannot be empty")
     @Size(min = 1, max = 10, message = "Course list must have between 1 and 10 items")
     @Valid
-    private List<@Valid CourseRequestDTO> courses;
+    private List<@Valid CourseRequestNameTimeDTO> courses;
 
 }

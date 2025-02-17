@@ -20,6 +20,9 @@ public interface ClassroomRepository
     @Override
     Page<ClassroomEntity> findAll(Specification<ClassroomEntity> spec,@NonNull Pageable pageable);
 
+   // Boolean existsById(@NonNull Long id);
+    Boolean existsByRoom(Integer room);
+
 
 
     // replaced by Specification

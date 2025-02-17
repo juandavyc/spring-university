@@ -27,7 +27,7 @@ public class CourseEntity {
 
 
     @ManyToOne//(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_classroom", nullable = false)
+    @JoinColumn(name = "id_classroom" /*nullable = false*/)
     private ClassroomEntity classroom;
 
     @ManyToMany(cascade =
