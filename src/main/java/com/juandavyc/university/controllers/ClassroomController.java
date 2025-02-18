@@ -38,6 +38,7 @@ public class ClassroomController {
         return ResponseEntity.ok(classroomService.findAll(pageable));
     }
 
+
     @GetMapping(path = "search")
     public ResponseEntity<Page<ClassroomResponseDTO>> findByFilters(
             @PageableDefault(size = 2, direction = Sort.Direction.ASC) Pageable pageable,

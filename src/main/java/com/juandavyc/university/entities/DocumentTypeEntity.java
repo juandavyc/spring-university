@@ -33,8 +33,8 @@ public class DocumentTypeEntity {
     @OneToMany(
             mappedBy = "documentType",
             fetch = FetchType.LAZY,
-            orphanRemoval = true,
-            cascade = CascadeType.ALL
+           // orphanRemoval = true,
+            cascade = CascadeType.PERSIST
     )
     @ToString.Exclude
     private List<PersonEntity> persons;

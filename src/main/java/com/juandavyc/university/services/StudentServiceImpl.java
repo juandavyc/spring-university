@@ -38,9 +38,11 @@ public class StudentServiceImpl implements StudentService {
     @Transactional(propagation=Propagation.NESTED)
     @Override
     public StudentEntity create(StudentEntity student, Long id) {
-        final var person = personService.findById(id);
-        student.setPerson(person);
-        return studentRepository.save(student);
+//        final var person = personService.findById(id);
+//        student.setPerson(person);
+//        return studentRepository.save(student);
+
+        return null;
     }
 
     @Override

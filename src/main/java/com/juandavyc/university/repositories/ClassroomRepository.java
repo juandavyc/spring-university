@@ -18,7 +18,7 @@ public interface ClassroomRepository
 
     @NonNull
     @Override
-    Page<ClassroomEntity> findAll(Specification<ClassroomEntity> spec,@NonNull Pageable pageable);
+    Page<ClassroomEntity> findAll(Specification<ClassroomEntity> specifications,@NonNull Pageable pageable);
 
    // Boolean existsById(@NonNull Long id);
     Boolean existsByRoom(Integer room);

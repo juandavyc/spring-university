@@ -4,7 +4,7 @@ import com.juandavyc.university.entities.ClassroomEntity;
 import com.juandavyc.university.entities.CourseEntity;
 
 public interface CourseService {
-//    CourseEntity findAll();
+    CourseEntity findAll();
     CourseEntity findById(Long id);
 
     CourseEntity create(CourseEntity course);

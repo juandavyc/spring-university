@@ -37,7 +37,7 @@ public class PersonEntity {
 
 
     @ManyToOne //(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_document_type", nullable = false)
+    @JoinColumn(name = "id_document_type"/*nullable = false*/)
     private DocumentTypeEntity documentType;
 
 

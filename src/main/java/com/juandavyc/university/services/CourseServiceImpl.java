@@ -25,6 +25,11 @@ public class CourseServiceImpl implements CourseService {
     }
 
 
+    @Override
+    public CourseEntity findAll() {
+        return null;
+    }
+
     @Transactional(propagation=Propagation.NESTED)
     @Override
     public CourseEntity findById(Long id) {
@@ -43,17 +48,20 @@ public class CourseServiceImpl implements CourseService {
 
         return courseRepository.save(course);
     }
+
     @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public CourseEntity addProfessorToCourse(Long courseId, Long professorId) {
+//
+//        final var professor = professorService.findById(professorId);
+//        final var course = findById(courseId);
+//
+//        course.getProfessors().add(professor);
+//        professor.getCourses().add(course);
+//
+//        return courseRepository.save(course);
 
-        final var professor = professorService.findById(professorId);
-        final var course = findById(courseId);
-
-        course.getProfessors().add(professor);
-        professor.getCourses().add(course);
-
-        return courseRepository.save(course);
+        return null;
     }
 
     @Override

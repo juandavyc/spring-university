@@ -11,30 +11,30 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class ProfessorServiceImpl implements ProfessorService {
 
-
-    private final ProfessorRepository professorRepository;
-    private final PersonService personService;
-
-    @Transactional
-    @Override
-    public ProfessorEntity create(ProfessorEntity professor, Long personId) {
-
-        final var person = personService.findById(personId);
-
-        professor.setPerson(person);
-
-        return professorRepository.save(professor);
-    }
-    @Transactional(propagation = Propagation.NESTED)
-    @Override
-    public ProfessorEntity create(ProfessorEntity professor) {
-        return professorRepository.save(professor);
-    }
-
-    @Override
-    public ProfessorEntity findById(Long id) {
-        return professorRepository.findById(id)
-                .orElseThrow(()->new IllegalArgumentException("Person by id " + id + " not found"));
-    }
+//
+//    private final ProfessorRepository professorRepository;
+//    private final PersonService personService;
+//
+//    @Transactional
+//    @Override
+//    public ProfessorEntity create(ProfessorEntity professor, Long personId) {
+//
+//        final var person = personService.findById(personId);
+//
+//        professor.setPerson(person);
+//
+//        return professorRepository.save(professor);
+//    }
+//    @Transactional(propagation = Propagation.NESTED)
+//    @Override
+//    public ProfessorEntity create(ProfessorEntity professor) {
+//        return professorRepository.save(professor);
+//    }
+//
+//    @Override
+//    public ProfessorEntity findById(Long id) {
+//        return professorRepository.findById(id)
+//                .orElseThrow(()->new IllegalArgumentException("Person by id " + id + " not found"));
+//    }
 
 }
