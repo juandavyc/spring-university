@@ -25,7 +25,6 @@ public class CourseEntity {
     private String name;
     private Boolean time;
 
-
     @ManyToOne//(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_classroom" /*nullable = false*/)
     private ClassroomEntity classroom;

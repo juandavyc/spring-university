@@ -1,10 +1,9 @@
 package com.juandavyc.university.entities;
 
+import com.juandavyc.university.embeddables.AuditInfo;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.security.PrivateKey;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -23,6 +22,7 @@ import java.util.Objects;
 public class DocumentTypeEntity {
 
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -39,7 +39,11 @@ public class DocumentTypeEntity {
     @ToString.Exclude
     private List<PersonEntity> persons;
 
+//    @Embedded
+//    private AuditInfo auditInfo = new AuditInfo();;
 
+//    @Version
+//    private Short version = 0;
 
 
 
@@ -54,4 +58,10 @@ public class DocumentTypeEntity {
     public int hashCode() {
         return Objects.hashCode(id);
     }
+
+//    @PreUpdate
+//    public void preUpdate() {
+//        setVersion(getVersion() == null ? 1 : getVersion());
+//    }
+
 }

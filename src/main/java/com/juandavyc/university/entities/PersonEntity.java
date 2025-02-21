@@ -1,7 +1,10 @@
 package com.juandavyc.university.entities;
 
+import com.juandavyc.university.embeddables.AuditInfo;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -30,21 +33,24 @@ public class PersonEntity {
     @Column(unique = true, nullable = false, length = 20)
     private String document;
 
-    @Column(name = "created_at")
-    private LocalDateTime createdAt;
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
-
-
-    @ManyToOne //(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER) //(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_document_type"/*nullable = false*/)
     private DocumentTypeEntity documentType;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private PersonRoleEnum role;
 
-//    @OneToOne(mappedBy = "person", fetch = FetchType.LAZY)
-//    private ProfessorEntity professor;  // Relación bidireccional
+    @Embedded
+    private AuditInfo auditInfo;
 
 
+//    @OneToOne(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
+//    @ToString.Exclude
+//    private ProfessorEntity student;
+
+    @Version
+    private Integer version;
 
     @Override
     public boolean equals(Object o) {
@@ -57,4 +63,12 @@ public class PersonEntity {
     public int hashCode() {
         return Objects.hashCode(id);
     }
+
+
+//    @PreUpdate
+//    public void preUpdate() {
+//        setVersion(getVersion() == null ? 1 : getVersion());
+//    }
+
+
 }

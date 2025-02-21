@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 
 public class ClassroomResponseDTO {
 
-    private Integer id;
+    private Long id;
     private Integer room;
 
 }

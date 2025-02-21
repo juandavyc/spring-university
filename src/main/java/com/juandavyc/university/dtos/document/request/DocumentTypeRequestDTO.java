@@ -16,7 +16,7 @@ public class DocumentTypeRequestDTO {
 
     @NotNull(message = "Name cannot be null")
     @NotEmpty(message = "Name cannot be empty")
-    @Pattern(regexp = "^[a-zA-Z]+$")
+    @Pattern(regexp = "^[a-zA-Z]*$")
     private String name;
 
 }

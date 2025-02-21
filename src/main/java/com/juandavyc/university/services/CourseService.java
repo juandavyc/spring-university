@@ -1,17 +1,33 @@
 package com.juandavyc.university.services;
 
-import com.juandavyc.university.entities.ClassroomEntity;
+import com.juandavyc.university.dtos.course.request.CourseRequestDTO;
+import com.juandavyc.university.dtos.course.request.CourseUpdateDTO;
+import com.juandavyc.university.dtos.course.response.CourseResponseDTO;
+
 import com.juandavyc.university.entities.CourseEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 
 public interface CourseService {
-    CourseEntity findAll();
-    CourseEntity findById(Long id);
 
-    CourseEntity create(CourseEntity course);
+    Page<CourseResponseDTO> findAll(Pageable pageable);
 
-    CourseEntity addStudentToCourse(Long courseId,Long studentId);
+    CourseResponseDTO findById(Long id);
 
-    CourseEntity addProfessorToCourse(Long courseId,Long professorId);
+    Page<CourseResponseDTO> findByFilters(
+            Long id,
+            String name,
+            String timePeriod,
+            Long roomId,
+            Integer roomNumber,
+            Pageable pageable);
 
-    CourseEntity findByName(String name);
+
+    CourseEntity create(CourseRequestDTO courseRequestDTO);
+
+    CourseResponseDTO update(Long id,CourseUpdateDTO courseUpdateDTO);
+
+    void delete(Long id);
+
 }

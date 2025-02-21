@@ -3,8 +3,6 @@ package com.juandavyc.university.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.math.BigInteger;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -22,14 +20,15 @@ import java.util.List;
 public class StudentEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
     private Boolean scholarship;
 
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "id")
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_person")
+   // @MapsId
     private PersonEntity person;
 
     @ManyToMany(mappedBy = "students", fetch = FetchType.LAZY)

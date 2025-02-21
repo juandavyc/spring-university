@@ -1,28 +1,23 @@
-2025-02-18T00:06:22.929-05:00  INFO 20384 --- [university] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-02-18T00:06:22.941-05:00  INFO 20384 --- [university] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-02-18T00:06:22.945-05:00  INFO 20384 --- [university] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-02-18T00:06:22.949-05:00  INFO 20384 --- [university] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-02-18T00:06:22.960-05:00  INFO 20384 --- [university] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-02-18T00:08:10.571-05:00  INFO 508 --- [university] [restartedMain] c.j.university.UniversityApplication     : Starting UniversityApplication using Java 21.0.5 with PID 508 (C:\Users\Asus\Desktop\spring-2024\university\target\classes started by Asus in C:\Users\Asus\Desktop\spring-2024\university)
-2025-02-18T00:08:10.576-05:00  INFO 508 --- [university] [restartedMain] c.j.university.UniversityApplication     : No active profile set, falling back to 1 default profile: "default"
-2025-02-18T00:08:10.650-05:00  INFO 508 --- [university] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-02-18T00:08:10.651-05:00  INFO 508 --- [university] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-02-18T00:08:11.768-05:00  INFO 508 --- [university] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-18T00:08:11.924-05:00  INFO 508 --- [university] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 141 ms. Found 6 JPA repository interfaces.
-2025-02-18T00:08:12.638-05:00  INFO 508 --- [university] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-02-18T00:08:12.655-05:00  INFO 508 --- [university] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-02-18T00:08:12.655-05:00  INFO 508 --- [university] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2025-02-18T00:08:12.709-05:00  INFO 508 --- [university] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-02-18T00:08:12.710-05:00  INFO 508 --- [university] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2059 ms
-2025-02-18T00:08:12.904-05:00 DEBUG 508 --- [university] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
-2025-02-18T00:08:12.924-05:00  INFO 508 --- [university] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-18T00:08:13.016-05:00  INFO 508 --- [university] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
-2025-02-18T00:08:13.057-05:00  INFO 508 --- [university] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-02-18T00:08:13.396-05:00  INFO 508 --- [university] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-18T00:08:13.430-05:00  INFO 508 --- [university] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-02-18T00:08:13.609-05:00  INFO 508 --- [university] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1da6b1c8
-2025-02-18T00:08:13.611-05:00  INFO 508 --- [university] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-02-18T00:08:13.679-05:00  INFO 508 --- [university] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-02-21T00:00:06.632-05:00  INFO 16036 --- [university] [restartedMain] c.j.university.UniversityApplication     : Starting UniversityApplication using Java 21.0.5 with PID 16036 (C:\Users\Asus\Desktop\spring-2024\university\target\classes started by Asus in C:\Users\Asus\Desktop\spring-2024\university)
+2025-02-21T00:00:06.639-05:00  INFO 16036 --- [university] [restartedMain] c.j.university.UniversityApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-02-21T00:00:06.738-05:00  INFO 16036 --- [university] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-21T00:00:06.741-05:00  INFO 16036 --- [university] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-21T00:00:08.131-05:00  INFO 16036 --- [university] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-21T00:00:08.320-05:00  INFO 16036 --- [university] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 171 ms. Found 6 JPA repository interfaces.
+2025-02-21T00:00:09.189-05:00  INFO 16036 --- [university] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-21T00:00:09.206-05:00  INFO 16036 --- [university] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-21T00:00:09.207-05:00  INFO 16036 --- [university] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-21T00:00:09.264-05:00  INFO 16036 --- [university] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-21T00:00:09.264-05:00  INFO 16036 --- [university] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2518 ms
+2025-02-21T00:00:09.460-05:00 DEBUG 16036 --- [university] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2025-02-21T00:00:09.511-05:00  INFO 16036 --- [university] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-21T00:00:09.603-05:00  INFO 16036 --- [university] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.5.Final
+2025-02-21T00:00:09.663-05:00  INFO 16036 --- [university] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-21T00:00:10.076-05:00  INFO 16036 --- [university] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-21T00:00:10.145-05:00  INFO 16036 --- [university] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-21T00:00:10.340-05:00  INFO 16036 --- [university] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@12fa6a2d
+2025-02-21T00:00:10.342-05:00  INFO 16036 --- [university] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-21T00:00:10.407-05:00  INFO 16036 --- [university] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 17.2
@@ -30,249 +25,130 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-02-18T00:08:14.825-05:00  INFO 508 --- [university] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-18T00:08:15.308-05:00  INFO 508 --- [university] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-18T00:08:15.385-05:00 DEBUG 508 --- [university] [restartedMain] .c.JpaMetamodelMappingContextFactoryBean : Initializing JpaMetamodelMappingContext…
-2025-02-18T00:08:15.401-05:00 DEBUG 508 --- [university] [restartedMain] .c.JpaMetamodelMappingContextFactoryBean : Finished initializing JpaMetamodelMappingContext
-2025-02-18T00:08:15.428-05:00 DEBUG 508 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-02-18T00:08:15.474-05:00 DEBUG 508 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-02-18T00:08:15.605-05:00 DEBUG 508 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-02-18T00:08:15.655-05:00 DEBUG 508 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query 'ClassroomEntity.existsByRoom'
-2025-02-18T00:08:15.659-05:00 DEBUG 508 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query ClassroomEntity.existsByRoom
-2025-02-18T00:08:15.663-05:00 DEBUG 508 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-02-18T00:08:15.757-05:00 DEBUG 508 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-02-18T00:08:15.758-05:00 DEBUG 508 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-02-18T00:08:15.761-05:00 DEBUG 508 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query 'CourseEntity.findByName'
-2025-02-18T00:08:15.762-05:00 DEBUG 508 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query CourseEntity.findByName
-2025-02-18T00:08:15.762-05:00 DEBUG 508 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-02-18T00:08:15.772-05:00 DEBUG 508 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-02-18T00:08:15.773-05:00 DEBUG 508 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-02-18T00:08:15.783-05:00 DEBUG 508 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-02-18T00:08:15.784-05:00 DEBUG 508 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-02-18T00:08:15.903-05:00 DEBUG 508 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-02-18T00:08:15.904-05:00 DEBUG 508 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-02-18T00:08:15.907-05:00 DEBUG 508 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query 'DocumentTypeEntity.existsByName'
-2025-02-18T00:08:15.908-05:00 DEBUG 508 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query DocumentTypeEntity.existsByName
-2025-02-18T00:08:15.909-05:00 DEBUG 508 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-02-18T00:08:16.071-05:00  WARN 508 --- [university] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-18T00:08:16.460-05:00 DEBUG 508 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-02-18T00:08:16.461-05:00 DEBUG 508 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
-2025-02-18T00:08:16.574-05:00  INFO 508 --- [university] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-02-18T00:08:16.606-05:00  INFO 508 --- [university] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-02-18T00:08:16.615-05:00  INFO 508 --- [university] [restartedMain] c.j.university.UniversityApplication     : Started UniversityApplication in 6.737 seconds (process running for 7.417)
-2025-02-18T00:08:21.247-05:00  INFO 508 --- [university] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-18T00:08:21.247-05:00  INFO 508 --- [university] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-02-18T00:08:21.249-05:00  INFO 508 --- [university] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-02-18T00:08:21.276-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-1] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
-2025-02-18T00:08:21.331-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1198246794<open>)] for JPA transaction
-2025-02-18T00:08:21.331-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [com.juandavyc.university.services.PersonServiceImpl.findByFilters]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
-2025-02-18T00:08:21.342-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@48d7b1c4]
-2025-02-18T00:08:21.351-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1198246794<open>)] for JPA transaction
-2025-02-18T00:08:21.352-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
-2025-02-18T00:08:21.482-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
-    /* <criteria> */ select
-        pe1_0.id,
-        pe1_0.created_at,
-        pe1_0.document,
-        pe1_0.id_document_type,
-        pe1_0.name,
-        pe1_0.updated_at 
+2025-02-21T00:00:11.822-05:00  INFO 16036 --- [university] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-21T00:00:12.324-05:00  INFO 16036 --- [university] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-21T00:00:12.413-05:00 DEBUG 16036 --- [university] [restartedMain] .c.JpaMetamodelMappingContextFactoryBean : Initializing JpaMetamodelMappingContext…
+2025-02-21T00:00:12.430-05:00 DEBUG 16036 --- [university] [restartedMain] .c.JpaMetamodelMappingContextFactoryBean : Finished initializing JpaMetamodelMappingContext
+2025-02-21T00:00:12.463-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:12.522-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:12.657-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:12.710-05:00 DEBUG 16036 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query 'ClassroomEntity.existsByRoom'
+2025-02-21T00:00:12.714-05:00 DEBUG 16036 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query ClassroomEntity.existsByRoom
+2025-02-21T00:00:12.716-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:12.858-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:12.860-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:12.863-05:00 DEBUG 16036 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query 'CourseEntity.findByName'
+2025-02-21T00:00:12.864-05:00 DEBUG 16036 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query CourseEntity.findByName
+2025-02-21T00:00:12.864-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:12.867-05:00 DEBUG 16036 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query 'CourseEntity.existsByTimeAndName'
+2025-02-21T00:00:12.869-05:00 DEBUG 16036 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query CourseEntity.existsByTimeAndName
+2025-02-21T00:00:12.870-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:12.876-05:00 DEBUG 16036 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query 'CourseEntity.existsByTimeAndClassroomId'
+2025-02-21T00:00:12.876-05:00 DEBUG 16036 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query CourseEntity.existsByTimeAndClassroomId
+2025-02-21T00:00:12.877-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:12.926-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:12.927-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:12.929-05:00 DEBUG 16036 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query 'DocumentTypeEntity.existsByName'
+2025-02-21T00:00:12.929-05:00 DEBUG 16036 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query DocumentTypeEntity.existsByName
+2025-02-21T00:00:12.929-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:12.966-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:12.967-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:12.970-05:00 DEBUG 16036 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Looking up named query 'PersonEntity.existsByDocument'
+2025-02-21T00:00:12.971-05:00 DEBUG 16036 --- [university] [restartedMain] o.s.d.jpa.repository.query.NamedQuery    : Did not find named query PersonEntity.existsByDocument
+2025-02-21T00:00:12.971-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:12.999-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:13.000-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:13.027-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:13.028-05:00 DEBUG 16036 --- [university] [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2025-02-21T00:00:13.251-05:00  WARN 16036 --- [university] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-21T00:00:13.746-05:00  INFO 16036 --- [university] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-21T00:00:13.781-05:00  INFO 16036 --- [university] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-21T00:00:13.791-05:00  INFO 16036 --- [university] [restartedMain] c.j.university.UniversityApplication     : Started UniversityApplication in 7.935 seconds (process running for 8.714)
+2025-02-21T00:00:33.749-05:00  INFO 16036 --- [university] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-21T00:00:33.749-05:00  INFO 16036 --- [university] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-21T00:00:33.751-05:00  INFO 16036 --- [university] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-21T00:00:33.775-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2025-02-21T00:00:33.817-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(887785366<open>)] for JPA transaction
+2025-02-21T00:00:33.818-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.existsById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
+2025-02-21T00:00:33.825-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@ab3b801]
+2025-02-21T00:00:34.270-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    /* select
+        count(*) 
     from
-        person pe1_0 
-    join
-        document_type dt1_0 
-            on dt1_0.id=pe1_0.id_document_type 
-    where
-        dt1_0.name=? 
-    offset
-        ? rows 
-    fetch
-        first ? rows only
-2025-02-18T00:08:21.515-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction rollback
-2025-02-18T00:08:21.516-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Rolling back JPA transaction on EntityManager [SessionImpl(1198246794<open>)]
-2025-02-18T00:08:21.521-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Not closing pre-bound JPA EntityManager after transaction
-2025-02-18T00:08:21.522-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-1] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
-2025-02-18T00:08:21.523-05:00 ERROR 508 --- [university] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: No persons found] with root cause
-
-java.lang.IllegalArgumentException: No persons found
-	at com.juandavyc.university.services.PersonServiceImpl.findByFilters(PersonServiceImpl.java:67) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-6.2.2.jar:6.2.2]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.2.jar:6.2.2]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.2.jar:6.2.2]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.2.jar:6.2.2]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.2.jar:6.2.2]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.2.jar:6.2.2]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727) ~[spring-aop-6.2.2.jar:6.2.2]
-	at com.juandavyc.university.services.PersonServiceImpl$$SpringCGLIB$$0.findByFilters(<generated>) ~[classes/:na]
-	at com.juandavyc.university.controllers.PersonController.findByFilters(PersonController.java:49) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-6.2.2.jar:6.2.2]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.2.jar:6.2.2]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.2.jar:6.2.2]
-	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:174) ~[spring-context-6.2.2.jar:6.2.2]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.2.jar:6.2.2]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727) ~[spring-aop-6.2.2.jar:6.2.2]
-	at com.juandavyc.university.controllers.PersonController$$SpringCGLIB$$0.findByFilters(<generated>) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2025-02-18T00:08:21.542-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-1] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
-2025-02-18T00:08:21.604-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-1] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
-2025-02-18T00:08:54.990-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-4] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
-2025-02-18T00:08:54.995-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-4] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1895806516<open>)] for JPA transaction
-2025-02-18T00:08:54.995-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-4] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [com.juandavyc.university.services.PersonServiceImpl.findByFilters]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
-2025-02-18T00:08:54.997-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-4] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@f6d089]
-2025-02-18T00:08:54.998-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-4] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1895806516<open>)] for JPA transaction
-2025-02-18T00:08:54.998-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-4] o.s.orm.jpa.JpaTransactionManager        : Participating in existing transaction
-2025-02-18T00:08:55.000-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
-    /* <criteria> */ select
-        pe1_0.id,
-        pe1_0.created_at,
-        pe1_0.document,
-        pe1_0.id_document_type,
-        pe1_0.name,
-        pe1_0.updated_at 
+        ClassroomEntity x 
+    WHERE
+        x.id = :id */ select
+            count(*) 
+        from
+            classroom ce1_0 
+        where
+            ce1_0.id=?
+2025-02-21T00:00:34.289-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction commit
+2025-02-21T00:00:34.289-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Committing JPA transaction on EntityManager [SessionImpl(887785366<open>)]
+2025-02-21T00:00:34.292-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Not closing pre-bound JPA EntityManager after transaction
+2025-02-21T00:00:34.293-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(887785366<open>)] for JPA transaction
+2025-02-21T00:00:34.293-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.deleteById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-02-21T00:00:34.293-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@43503b47]
+2025-02-21T00:00:34.299-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        ce1_0.id,
+        ce1_0.room 
     from
-        person pe1_0 
-    join
-        document_type dt1_0 
-            on dt1_0.id=pe1_0.id_document_type 
+        classroom ce1_0 
     where
-        dt1_0.name=? 
-    offset
-        ? rows 
-    fetch
-        first ? rows only
-2025-02-18T00:08:55.002-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-4] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction rollback
-2025-02-18T00:08:55.003-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-4] o.s.orm.jpa.JpaTransactionManager        : Rolling back JPA transaction on EntityManager [SessionImpl(1895806516<open>)]
-2025-02-18T00:08:55.004-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-4] o.s.orm.jpa.JpaTransactionManager        : Not closing pre-bound JPA EntityManager after transaction
-2025-02-18T00:08:55.005-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-4] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
-2025-02-18T00:08:55.005-05:00 ERROR 508 --- [university] [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: No persons found] with root cause
-
-java.lang.IllegalArgumentException: No persons found
-	at com.juandavyc.university.services.PersonServiceImpl.findByFilters(PersonServiceImpl.java:67) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-6.2.2.jar:6.2.2]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.2.jar:6.2.2]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.2.jar:6.2.2]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380) ~[spring-tx-6.2.2.jar:6.2.2]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.2.jar:6.2.2]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.2.jar:6.2.2]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727) ~[spring-aop-6.2.2.jar:6.2.2]
-	at com.juandavyc.university.services.PersonServiceImpl$$SpringCGLIB$$0.findByFilters(<generated>) ~[classes/:na]
-	at com.juandavyc.university.controllers.PersonController.findByFilters(PersonController.java:49) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-6.2.2.jar:6.2.2]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.2.2.jar:6.2.2]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.2.2.jar:6.2.2]
-	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:174) ~[spring-context-6.2.2.jar:6.2.2]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.2.jar:6.2.2]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727) ~[spring-aop-6.2.2.jar:6.2.2]
-	at com.juandavyc.university.controllers.PersonController$$SpringCGLIB$$0.findByFilters(<generated>) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2025-02-18T00:08:55.007-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-4] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
-2025-02-18T00:08:55.009-05:00 DEBUG 508 --- [university] [http-nio-8080-exec-4] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
-2025-02-18T00:09:18.962-05:00  INFO 508 --- [university] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-02-18T00:09:18.968-05:00  INFO 508 --- [university] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-02-18T00:09:18.971-05:00  INFO 508 --- [university] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-02-18T00:09:18.975-05:00  INFO 508 --- [university] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-02-18T00:09:18.981-05:00  INFO 508 --- [university] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+        ce1_0.id=?
+2025-02-21T00:00:34.332-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction commit
+2025-02-21T00:00:34.332-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Committing JPA transaction on EntityManager [SessionImpl(887785366<open>)]
+2025-02-21T00:00:34.353-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    /* delete for com.juandavyc.university.entities.ClassroomEntity */delete 
+    from
+        classroom 
+    where
+        id=?
+2025-02-21T00:00:34.364-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] o.s.orm.jpa.JpaTransactionManager        : Not closing pre-bound JPA EntityManager after transaction
+2025-02-21T00:00:34.388-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-1] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2025-02-21T00:00:59.030-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] o.j.s.OpenEntityManagerInViewInterceptor : Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2025-02-21T00:00:59.030-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1087267366<open>)] for JPA transaction
+2025-02-21T00:00:59.030-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.existsById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
+2025-02-21T00:00:59.032-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@44f1fee7]
+2025-02-21T00:00:59.034-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    /* select
+        count(*) 
+    from
+        ClassroomEntity x 
+    WHERE
+        x.id = :id */ select
+            count(*) 
+        from
+            classroom ce1_0 
+        where
+            ce1_0.id=?
+2025-02-21T00:00:59.036-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction commit
+2025-02-21T00:00:59.037-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] o.s.orm.jpa.JpaTransactionManager        : Committing JPA transaction on EntityManager [SessionImpl(1087267366<open>)]
+2025-02-21T00:00:59.038-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] o.s.orm.jpa.JpaTransactionManager        : Not closing pre-bound JPA EntityManager after transaction
+2025-02-21T00:00:59.039-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] o.s.orm.jpa.JpaTransactionManager        : Found thread-bound EntityManager [SessionImpl(1087267366<open>)] for JPA transaction
+2025-02-21T00:00:59.039-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] o.s.orm.jpa.JpaTransactionManager        : Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.deleteById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-02-21T00:00:59.039-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] o.s.orm.jpa.JpaTransactionManager        : Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@368f7abf]
+2025-02-21T00:00:59.039-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        ce1_0.id,
+        ce1_0.room 
+    from
+        classroom ce1_0 
+    where
+        ce1_0.id=?
+2025-02-21T00:00:59.042-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] o.s.orm.jpa.JpaTransactionManager        : Initiating transaction commit
+2025-02-21T00:00:59.042-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] o.s.orm.jpa.JpaTransactionManager        : Committing JPA transaction on EntityManager [SessionImpl(1087267366<open>)]
+2025-02-21T00:00:59.042-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    /* delete for com.juandavyc.university.entities.ClassroomEntity */delete 
+    from
+        classroom 
+    where
+        id=?
+2025-02-21T00:00:59.050-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] o.s.orm.jpa.JpaTransactionManager        : Not closing pre-bound JPA EntityManager after transaction
+2025-02-21T00:00:59.051-05:00 DEBUG 16036 --- [university] [http-nio-8080-exec-3] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2025-02-21T00:01:37.836-05:00  INFO 16036 --- [university] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-21T00:01:37.842-05:00  INFO 16036 --- [university] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-21T00:01:37.845-05:00  INFO 16036 --- [university] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-21T00:01:37.849-05:00  INFO 16036 --- [university] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-21T00:01:37.856-05:00  INFO 16036 --- [university] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

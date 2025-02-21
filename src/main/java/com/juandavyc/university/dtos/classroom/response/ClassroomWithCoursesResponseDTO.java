@@ -1,20 +1,23 @@
 package com.juandavyc.university.dtos.classroom.response;
 
 
-import com.juandavyc.university.dtos.course.CourseResponseDTO;
+import com.juandavyc.university.dtos.course.response.CourseNotClassroomResponseDTO;
+import com.juandavyc.university.dtos.course.response.CourseResponseDTO;
 import lombok.*;
 
 import java.util.List;
+
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class ClassroomWithCoursesResponseDTO  {
+public class ClassroomWithCoursesResponseDTO {
 
-    private Integer id;
+    private Long id;
     private Integer room;
-    private List<CourseResponseDTO> courses;
+
+    private List<CourseNotClassroomResponseDTO> courses;
 
 }

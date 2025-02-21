@@ -16,6 +16,9 @@ public interface PersonRepository extends
     @NonNull
     Page<PersonEntity> findAll(Specification<PersonEntity> specification, @NonNull Pageable pageable);
 
+    Boolean existsByDocument(String document);
+
+
    // PersonEntity findByProfessorId(Long id);
 
 }

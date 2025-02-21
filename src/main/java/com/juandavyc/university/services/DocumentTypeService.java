@@ -13,6 +13,8 @@ import java.util.Optional;
 
 public interface DocumentTypeService {
 
+    DocumentTypeEntity findById(Long id);
+
     Page<DocumentTypeResponseDTO> findAll(Pageable pageable);
 
     Page<DocumentTypeResponseWithPersonsDTO> findAllWithPersons(Pageable pageable);

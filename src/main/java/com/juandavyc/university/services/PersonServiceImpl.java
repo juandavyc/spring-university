@@ -1,23 +1,25 @@
 package com.juandavyc.university.services;
 
+import com.juandavyc.university.dtos.person.request.PersonRequestDTO;
+import com.juandavyc.university.dtos.person.request.PersonUpdateDTO;
 import com.juandavyc.university.dtos.person.response.PersonResponseDTO;
-import com.juandavyc.university.dtos.person.response.PersonWithDocumentTypeResponseDTO;
 import com.juandavyc.university.entities.PersonEntity;
 import com.juandavyc.university.mappers.PersonMapper;
+import com.juandavyc.university.mappers.PersonUpdateMapper;
 import com.juandavyc.university.repositories.PersonRepository;
 import com.juandavyc.university.specifications.PersonSpecifications;
+import com.juandavyc.university.validators.PersonValidator;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.Validator;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -26,20 +28,38 @@ public class PersonServiceImpl implements PersonService {
 
     private final PersonRepository personRepository;
     private final PersonMapper personMapper;
+    private final PersonUpdateMapper personUpdateMapper;
+    private final DocumentTypeService documentTypeService;
+
+
+    private final PersonValidator personValidator;
+
 
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     @Override
-    public Page<PersonWithDocumentTypeResponseDTO> findAll(Pageable pageable) {
-        final var personsEntities = personRepository.findAll(pageable);
-        if(personsEntities.isEmpty()) {
-            throw new IllegalArgumentException("No persons found");
-        }
-        return personsEntities.map(personMapper::toPersonWithDocumentTypeResponseDTO);
+    public PersonResponseDTO findById(Long id) {
+
+        final var person = personRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Person with id: " + id + ", not found"));
+
+        return personMapper.toPersonResponseDTO(person);
     }
 
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     @Override
-    public Page<PersonWithDocumentTypeResponseDTO> findByFilters(
+    public Page<PersonResponseDTO> findAll(Pageable pageable) {
+
+        final var personsEntities = personRepository.findAll(pageable);
+
+        if (personsEntities.isEmpty()) {
+            throw new IllegalArgumentException("No persons found");
+        }
+        return personsEntities.map(personMapper::toPersonResponseDTO);
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+    @Override
+    public Page<PersonResponseDTO> findByFilters(
             Long id,
             String name,
             String document,
@@ -63,11 +83,86 @@ public class PersonServiceImpl implements PersonService {
 
         final var personsEntities = personRepository.findAll(specification, pageable);
 
-        if(personsEntities.getContent().isEmpty()) {
+        if (personsEntities.getContent().isEmpty()) {
             throw new IllegalArgumentException("No persons found");
         }
 
-        return personsEntities.map(personMapper::toPersonWithDocumentTypeResponseDTO);
+        return personsEntities.map(personMapper::toPersonResponseDTO);
+    }
+
+    @Transactional(
+            propagation = Propagation.REQUIRED,
+            rollbackFor = RuntimeException.class
+    )
+    @Override
+    public PersonEntity create(PersonRequestDTO personRequestDTO) {
+
+        personValidator.existsByDocument(personRequestDTO.getDocument());
+
+        try {
+
+            final var personEntity = personMapper.toPersonEntity(personRequestDTO);
+            final var documentTypeEntity = documentTypeService.findById(personRequestDTO.getIdDocument());
+
+            personEntity.setDocumentType(documentTypeEntity);
+
+            return personRepository.save(personEntity);
+
+        } catch (DataIntegrityViolationException e) {
+            throw new DataIntegrityViolationException("Concurrent: Error creating person: " + e.getMessage());
+        }
+
+    }
+
+    @Transactional(
+            propagation = Propagation.REQUIRED,
+            rollbackFor = RuntimeException.class
+    )
+    @Override
+    public PersonResponseDTO update(Long id, PersonUpdateDTO personUpdateDTO) {
+
+        final var personEntity = personRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Person with id: " + id + ", not found"));
+        try {
+
+            updateValidation(personUpdateDTO, personEntity);
+
+            personUpdateMapper.toUpdatePersonEntityFromDTO(personUpdateDTO, personEntity);
+
+            return personMapper.toPersonResponseDTO(personEntity);
+
+        } catch (Exception e) {
+            throw new RuntimeException("Error while updating person", e);
+        }
+
+    }
+
+    public void updateValidation(PersonUpdateDTO personUpdateDTO, PersonEntity personEntity) {
+
+        personValidator.validateDocumentUniqueness(
+                personUpdateDTO.getDocument(),
+                personEntity.getDocument()
+        );
+
+        if (personValidator
+                .isDifferentIdDocument(
+                        personUpdateDTO.getIdDocument(),
+                        personEntity.getDocumentType().getId())
+        ) {
+            final var documentTypeEntity = documentTypeService.findById(personUpdateDTO.getIdDocument());
+            personEntity.setDocumentType(documentTypeEntity);
+        }
+
+    }
+
+    @Override
+    public void delete(Long id) {
+
+        if (id == null || !personRepository.existsById(id)) {
+            throw new IllegalArgumentException("Person with id: " + id + ", not found");
+        }
+        personRepository.deleteById(id);
+
     }
 
 

@@ -1,23 +1,24 @@
 package com.juandavyc.university.services;
 
 
-import com.juandavyc.university.dtos.person.response.PersonWithDocumentTypeResponseDTO;
+import com.juandavyc.university.dtos.person.request.PersonRequestDTO;
+import com.juandavyc.university.dtos.person.request.PersonUpdateDTO;
 
+import com.juandavyc.university.dtos.person.response.PersonResponseDTO;
+import com.juandavyc.university.entities.PersonEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
 
 public interface PersonService {
 
+    PersonResponseDTO findById(Long id);
 
-    Page<PersonWithDocumentTypeResponseDTO> findAll(Pageable pageable);
+    Page<PersonResponseDTO> findAll(Pageable pageable);
 
-    Page<PersonWithDocumentTypeResponseDTO> findByFilters(
+    Page<PersonResponseDTO> findByFilters(
             Long id,
             String name,
             String document,
@@ -28,7 +29,13 @@ public interface PersonService {
             Pageable pageable
     );
 
+    PersonEntity create(PersonRequestDTO personRequestDTO);
 
+    PersonResponseDTO update(Long id, PersonUpdateDTO personUpdateDTO);
+
+    void delete(Long id);
+
+    void updateValidation(PersonUpdateDTO personUpdateDTO, PersonEntity personEntity);
     // test
 //    PersonEntity create(PersonEntity person);
 //    List<PersonEntity> createAll(List<PersonEntity> persons);

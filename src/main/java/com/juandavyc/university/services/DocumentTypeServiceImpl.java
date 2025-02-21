@@ -8,6 +8,7 @@ import com.juandavyc.university.entities.DocumentTypeEntity;
 import com.juandavyc.university.mappers.DocumentTypeMapper;
 import com.juandavyc.university.repositories.DocumentRepository;
 import com.juandavyc.university.specifications.DocumentTypeSpecifications;
+import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -33,6 +34,13 @@ public class DocumentTypeServiceImpl implements DocumentTypeService {
 
     private final DocumentRepository documentRepository;
     private final DocumentTypeMapper documentTypeMapper;
+    private final EntityManager em;
+
+    @Override
+    public DocumentTypeEntity findById(Long id) {
+        return documentRepository.findById(id)
+                .orElseThrow(()-> new IllegalArgumentException("Document type by id:"+id+", not found"));
+    }
 
     @Transactional(
             propagation = Propagation.NESTED,
@@ -100,12 +108,13 @@ public class DocumentTypeServiceImpl implements DocumentTypeService {
         final var documentTypeEntity = documentRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Document type by id:" + id + ", not found"));
 
-        // TODO: add validation by Name
-        documentTypeEntity.setName(documentTypeRequestDTO.getName());
+           documentTypeEntity.setName(documentTypeRequestDTO.getName());
+
+        final var toSave = documentRepository.saveAndFlush(documentTypeEntity);
 
         try {
             return documentTypeMapper.toDocumentTypeResponseDTO(
-                    documentRepository.save(documentTypeEntity)
+                    toSave
             );
         } catch (DataIntegrityViolationException e) {
             throw new IllegalArgumentException("Concurrent: Document type with name:" + documentTypeRequestDTO.getName() + "  already exists");
