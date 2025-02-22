@@ -2,29 +2,20 @@ package com.juandavyc.university.services;
 
 import com.juandavyc.university.dtos.document.request.DocumentTypeRequestDTO;
 import com.juandavyc.university.dtos.document.response.DocumentTypeResponseDTO;
-import com.juandavyc.university.dtos.document.response.DocumentTypeResponseWithPersonsDTO;
-import com.juandavyc.university.entities.ClassroomEntity;
 import com.juandavyc.university.entities.DocumentTypeEntity;
 import com.juandavyc.university.mappers.DocumentTypeMapper;
 import com.juandavyc.university.repositories.DocumentRepository;
 import com.juandavyc.university.specifications.DocumentTypeSpecifications;
-import jakarta.persistence.EntityManager;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-
-
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
 
 
 @Service
@@ -34,7 +25,7 @@ public class DocumentTypeServiceImpl implements DocumentTypeService {
 
     private final DocumentRepository documentRepository;
     private final DocumentTypeMapper documentTypeMapper;
-    private final EntityManager em;
+
 
     @Override
     public DocumentTypeEntity findById(Long id) {
@@ -54,17 +45,6 @@ public class DocumentTypeServiceImpl implements DocumentTypeService {
 
     }
 
-    @Transactional(
-            propagation = Propagation.NESTED,
-            readOnly = true
-    )
-    @Override
-    public Page<DocumentTypeResponseWithPersonsDTO> findAllWithPersons(Pageable pageable) {
-
-        final var documentTypes = findAllDocuments(pageable);
-        return documentTypes.map(documentTypeMapper::toDocumentTypeResponseWithPersonsDTO);
-
-    }
 
     @Override
     public Page<DocumentTypeResponseDTO> findByFilters(Long id, String name, Pageable pageable) {

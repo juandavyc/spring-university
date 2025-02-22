@@ -54,6 +54,14 @@ public class CourseServiceImpl implements CourseService {
         return courseMapper.toCourseResponseDTO(course);
     }
 
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+    @Override
+    public CourseEntity findByIdEntity(Long id) {
+
+        return courseRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("No student with id:" + id + ", found"));
+    }
+
 
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
 

@@ -19,7 +19,7 @@ import java.time.LocalDate;
 
 @Validated
 @RestController
-@RequestMapping(path = "api/person")
+@RequestMapping(path = "api/persons")
 @RequiredArgsConstructor
 public class PersonController {
 

@@ -15,6 +15,9 @@ public interface CourseService {
 
     CourseResponseDTO findById(Long id);
 
+    CourseEntity findByIdEntity(Long id);
+
+
     Page<CourseResponseDTO> findByFilters(
             Long id,
             String name,

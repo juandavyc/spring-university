@@ -2,9 +2,13 @@ package com.juandavyc.university.services;
 
 import com.juandavyc.university.dtos.student.request.StudentRequestDTO;
 import com.juandavyc.university.dtos.student.request.StudentUpdateDTO;
+
+import com.juandavyc.university.dtos.student.response.StudentCourseResponseDTO;
+import com.juandavyc.university.dtos.student.response.StudentCoursesResponseDTO;
 import com.juandavyc.university.dtos.student.response.StudentResponseDTO;
 
 import com.juandavyc.university.entities.StudentEntity;
+import com.juandavyc.university.mappers.CourseMapper;
 import com.juandavyc.university.mappers.StudentMapper;
 import com.juandavyc.university.mappers.StudentUpdateMapper;
 import com.juandavyc.university.repositories.StudentRepository;
@@ -27,6 +31,7 @@ public class StudentServiceImpl implements StudentService {
     private final StudentUpdateMapper studentUpdateMapper;
 
     private final PersonService personService;
+    private final CourseService courseService;
 
 
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
@@ -44,13 +49,37 @@ public class StudentServiceImpl implements StudentService {
 
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     @Override
-    public StudentResponseDTO findById(Long id) {
+    public StudentCoursesResponseDTO findById(Long id) {
 
         final var student = studentRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("No student with id:" + id + ", found"));
+                .orElseThrow(() -> new IllegalArgumentException("No student with id:" + id));
 
-        return studentMapper.toStudentResponseDTO(student);
+        return studentMapper.toStudentCoursesResponseDTO(student);
     }
+
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+    @Override
+    public StudentCoursesResponseDTO findByIdCourses(
+            Long studentId,
+            String name
+    ) {
+
+        final var student = studentRepository.findById(studentId)
+                .orElseThrow(() -> new IllegalArgumentException("No student with id:" + studentId));
+
+        final var response = studentMapper.toStudentCoursesResponseDTO(student);
+
+        if (name != null) {
+            response.setCourses(
+                    response.getCourses().stream()
+                            .filter(course -> course.getName().equals(name))
+                            .toList()
+
+            );
+        }
+        return response;
+    }
+
 
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
     @Override
@@ -104,7 +133,7 @@ public class StudentServiceImpl implements StudentService {
     public StudentResponseDTO update(Long id, StudentUpdateDTO studentUpdateDTO) {
 
         final var studentEntity = studentRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("No student found with id:" + id + ", found"));
+                .orElseThrow(() -> new IllegalArgumentException("No student found with id:" + id));
 
         try {
 
@@ -136,6 +165,46 @@ public class StudentServiceImpl implements StudentService {
         }
         studentRepository.deleteById(id);
     }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public StudentCourseResponseDTO addStudentCourse(Long studentId, Long courseId) {
+
+        final var studentEntity = studentRepository.findById(studentId)
+                .orElseThrow(() -> new IllegalArgumentException("No student found with id:" + studentId));
+
+        final var courseEntity = courseService.findByIdEntity(courseId);
+
+        try{
+            studentEntity.getCourses().add(courseEntity);
+            courseEntity.getStudents().add(studentEntity);
+
+            studentRepository.save(studentEntity);
+
+            return StudentCourseResponseDTO.builder()
+                    .studentId(studentId)
+                    .courseId(courseId)
+                    .build();
+
+        } catch (RuntimeException e) {
+            throw new RuntimeException("Concurrent error: "+e.getMessage());
+        }
+    }
+
+    @Override
+    public void removeStudentCourse(Long studentId, Long courseId) {
+        final var studentEntity = studentRepository.findById(studentId)
+                .orElseThrow(() -> new IllegalArgumentException("No student found with id:" + studentId));
+
+        final var courseEntity = courseService.findByIdEntity(courseId);
+
+        studentEntity.getCourses().remove(courseEntity);
+        courseEntity.getStudents().remove(studentEntity);
+
+        studentRepository.save(studentEntity);
+    }
+
+
 }
 
 

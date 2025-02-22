@@ -14,12 +14,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class StudentResponseDTO {
+public class StudentCoursesResponseDTO {
 
     private Long id;
     private Boolean scholarship;
 
-    private PersonResponseDTO person;
-
+    //private PersonResponseDTO person;
+    private List<CourseResponseDTO> courses;
 }
 

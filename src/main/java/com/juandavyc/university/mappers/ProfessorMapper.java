@@ -3,6 +3,7 @@ package com.juandavyc.university.mappers;
 
 import com.juandavyc.university.dtos.person.request.PersonRequestDTO;
 import com.juandavyc.university.dtos.professor.request.ProfessorRequestDTO;
+import com.juandavyc.university.dtos.professor.response.ProfessorCoursesResponseDTO;
 import com.juandavyc.university.dtos.professor.response.ProfessorResponseDTO;
 import com.juandavyc.university.entities.PersonEntity;
 import com.juandavyc.university.entities.ProfessorEntity;
@@ -10,12 +11,16 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 
-@Mapper(componentModel = "spring")
+@Mapper(
+        componentModel = "spring",
+        uses = {CourseMapper.class}
+)
 public interface ProfessorMapper {
 
     // response
     //   @Mapping(source = "person.id", target = "person.id", qualifiedByName = "hashId")
     ProfessorResponseDTO toProfessorResponseDTO(ProfessorEntity professorEntity);
+    ProfessorCoursesResponseDTO toProfessorCoursesResponseDTO(ProfessorEntity professorEntity);
 
     // request
     ProfessorEntity toProfessorEntity(ProfessorRequestDTO professorRequestDTO);

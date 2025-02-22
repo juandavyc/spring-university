@@ -32,7 +32,7 @@ public class StudentEntity {
     private PersonEntity person;
 
     @ManyToMany(mappedBy = "students", fetch = FetchType.LAZY)
-    @ToString.Exclude
+   // @ToString.Exclude
     private List<CourseEntity> courses;
 
 }

@@ -20,7 +20,7 @@ import java.util.List;
 
 @Validated
 @RestController
-@RequestMapping(path = "api/document-type")
+@RequestMapping(path = "api/documents-types")
 @RequiredArgsConstructor
 public class DocumentTypeController {
 
@@ -31,13 +31,6 @@ public class DocumentTypeController {
             @PageableDefault(size = 2, direction = Sort.Direction.ASC) Pageable pageable
     ) {
         return ResponseEntity.ok(documentTypeService.findAll(pageable));
-    }
-
-    @GetMapping(path = "persons")
-    public ResponseEntity<Page<DocumentTypeResponseWithPersonsDTO>> findAllWithPersons(
-            @PageableDefault(size = 2, direction = Sort.Direction.ASC) Pageable pageable
-    ) {
-        return ResponseEntity.ok(documentTypeService.findAllWithPersons(pageable));
     }
 
     @GetMapping(path = "search")

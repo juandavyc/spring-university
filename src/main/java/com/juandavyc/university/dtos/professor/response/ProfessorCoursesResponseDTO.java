@@ -1,4 +1,4 @@
-package com.juandavyc.university.dtos.student.response;
+package com.juandavyc.university.dtos.professor.response;
 
 import com.juandavyc.university.dtos.course.response.CourseResponseDTO;
 import com.juandavyc.university.dtos.person.response.PersonResponseDTO;
@@ -11,15 +11,17 @@ import java.util.List;
 
 @Data
 @Builder
+
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class StudentResponseDTO {
+public class ProfessorCoursesResponseDTO {
 
     private Long id;
-    private Boolean scholarship;
+    private Integer salary;
 
-    private PersonResponseDTO person;
+    private List<CourseResponseDTO> courses;
 
 }
+
 

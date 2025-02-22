@@ -1,0 +1,58 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class classroom {
+   room: integer
+   id: bigint
+}
+class course {
+   name: varchar(255)
+   time  /* AM true,PM false */: boolean
+   id_classroom: bigint
+   id: bigint
+}
+class document_type {
+   name: varchar(255)
+   id: bigint
+}
+class person {
+   name: varchar(255)
+   document: varchar(20)
+   id_document_type: bigint
+   created_at: timestamp
+   updated_at: timestamp
+   version: integer
+   role: varchar(255)
+   id: bigint
+}
+class professor {
+   salary: numeric(38)
+   id_person: bigint
+   id: bigint
+}
+class professor_course {
+   id_professor: bigint
+   id_course: bigint
+}
+class student {
+   scholarship: boolean
+   id_person: bigint
+   id: bigint
+}
+class student_course {
+   id_student: bigint
+   id_course: bigint
+}
+
+course            -[#595959,plain]-^  classroom        : "id_classroom:id"
+person            -[#595959,plain]-^  document_type    : "id_document_type:id"
+professor         -[#595959,plain]-^  person           : "id_person:id"
+professor_course  -[#595959,plain]-^  course           : "id_course:id"
+professor_course  -[#595959,plain]-^  professor        : "id_professor:id"
+student           -[#595959,plain]-^  person           : "id_person:id"
+student_course    -[#595959,plain]-^  course           : "id_course:id"
+student_course    -[#595959,plain]-^  student          : "id_student:id"
+@enduml

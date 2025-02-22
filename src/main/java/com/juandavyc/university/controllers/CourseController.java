@@ -19,7 +19,7 @@ import java.net.URI;
 
 @Validated
 @RestController
-@RequestMapping(path = "api/course")
+@RequestMapping(path = "api/courses")
 @RequiredArgsConstructor
 
 public class CourseController {

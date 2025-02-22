@@ -2,9 +2,12 @@ package com.juandavyc.university.controllers;
 
 import com.juandavyc.university.dtos.professor.request.ProfessorRequestDTO;
 import com.juandavyc.university.dtos.professor.request.ProfessorUpdateDTO;
+import com.juandavyc.university.dtos.professor.response.ProfessorCourseResponseDTO;
+import com.juandavyc.university.dtos.professor.response.ProfessorCoursesResponseDTO;
 import com.juandavyc.university.dtos.professor.response.ProfessorResponseDTO;
 import com.juandavyc.university.dtos.student.request.StudentRequestDTO;
 import com.juandavyc.university.dtos.student.request.StudentUpdateDTO;
+import com.juandavyc.university.dtos.student.response.StudentCoursesResponseDTO;
 import com.juandavyc.university.dtos.student.response.StudentResponseDTO;
 import com.juandavyc.university.entities.PersonRoleEnum;
 import com.juandavyc.university.services.ProfessorService;
@@ -22,7 +25,7 @@ import java.net.URI;
 
 @Validated
 @RestController
-@RequestMapping(path = "api/professor")
+@RequestMapping(path = "api/professors")
 @RequiredArgsConstructor
 public class ProfessorController {
 
@@ -97,6 +100,45 @@ public class ProfessorController {
         professorService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+
+    // persons ->classroom
+
+    @GetMapping(path = "{professorId}/courses")
+
+    public ResponseEntity<ProfessorCoursesResponseDTO> findByIdCourses(
+            @PathVariable Long professorId,
+            @RequestParam(required = false) String name
+    ) {
+        return ResponseEntity.ok(
+                professorService.findByIdCourses(
+                        professorId,
+                        name
+                )
+        );
+    }
+
+    @PostMapping(path = "{professorId}/courses/{courseId}")
+    public ResponseEntity<ProfessorCourseResponseDTO> addProfessorCourse(
+            @PathVariable Long professorId,
+            @PathVariable Long courseId
+    ) {
+        return ResponseEntity.ok(
+                professorService.addProfessorCourse(
+                        professorId, courseId
+                )
+        );
+    }
+
+    @DeleteMapping(path = "{professorId}/courses/{courseId}")
+    public ResponseEntity<Void> removeProfessorCourse(
+            @PathVariable Long professorId,
+            @PathVariable Long courseId
+    ) {
+        professorService.removeProfessorCourse(professorId,courseId);
+        return ResponseEntity.noContent().build();
+    }
+
 
 //
 //    @DeleteMapping(path = "{id}")

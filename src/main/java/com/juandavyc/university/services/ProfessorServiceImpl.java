@@ -2,6 +2,8 @@ package com.juandavyc.university.services;
 
 import com.juandavyc.university.dtos.professor.request.ProfessorRequestDTO;
 import com.juandavyc.university.dtos.professor.request.ProfessorUpdateDTO;
+import com.juandavyc.university.dtos.professor.response.ProfessorCourseResponseDTO;
+import com.juandavyc.university.dtos.professor.response.ProfessorCoursesResponseDTO;
 import com.juandavyc.university.dtos.professor.response.ProfessorResponseDTO;
 
 import com.juandavyc.university.entities.ProfessorEntity;
@@ -17,7 +19,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.security.PrivateKey;
 
 @Service
 @RequiredArgsConstructor
@@ -29,6 +30,7 @@ public class ProfessorServiceImpl implements ProfessorService {
     private final ProfessorUpdateMapper professorUpdateMapper;
 
     private final PersonService personService;
+    private final CourseService courseService;
 
     @Transactional(
             propagation = Propagation.NOT_SUPPORTED,
@@ -135,6 +137,54 @@ public class ProfessorServiceImpl implements ProfessorService {
         }
         professorRepository.deleteById(id);
 
+    }
+
+    // professor-courses
+    @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+    @Override
+    public ProfessorCoursesResponseDTO findByIdCourses(Long professorId, String name) {
+
+        final var professor = professorRepository.findById(professorId)
+                .orElseThrow(() -> new IllegalArgumentException("Professor with id:" + professorId + ", not found"));
+
+        return professorMapper.toProfessorCoursesResponseDTO(professor);
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public ProfessorCourseResponseDTO addProfessorCourse(Long professorId, Long courseId) {
+
+        final var professorEntity = professorRepository.findById(professorId)
+                .orElseThrow(() -> new IllegalArgumentException("Professor with id:" + professorId + ", not found"));
+
+        final var courseEntity = courseService.findByIdEntity(courseId);
+
+        try {
+            professorEntity.getCourses().add(courseEntity);
+            courseEntity.getProfessors().add(professorEntity);
+
+            return ProfessorCourseResponseDTO.builder()
+                    .professorId(professorEntity.getId())
+                    .courseId(courseEntity.getId())
+                    .build();
+        } catch (RuntimeException e) {
+            throw new RuntimeException("Concurrent error: " + e.getMessage());
+        }
+
+    }
+
+
+    @Override
+    public void removeProfessorCourse(Long professorId, Long courseId) {
+        final var professorEntity = professorRepository.findById(professorId)
+                .orElseThrow(() -> new IllegalArgumentException("No professor found with id:" + professorId));
+
+        final var courseEntity = courseService.findByIdEntity(courseId);
+
+        professorEntity.getCourses().remove(courseEntity);
+        courseEntity.getProfessors().remove(professorEntity);
+
+        professorRepository.save(professorEntity);
     }
 
 
